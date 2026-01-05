@@ -1,0 +1,134 @@
+body {
+    margin: 0; 
+    overflow: hidden; 
+    position: relative;
+    height: 100vh; 
+    width: 100vw; 
+    background-color: black;
+    cursor: none;
+}
+
+#olho-grande {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    background-color: white;
+    position: relative;
+        overflow: hidden;
+    border-radius: 50%;
+    /* Centraliza os dois elementos na tela */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Ajusta para centralizar completamente */
+}
+
+#olho-grande .iris{
+    width: 150px;
+    height: 150px;
+    animation: cicloDeCores 3.5s infinite;
+}
+
+@keyframes cicloDeCores {
+    0% {
+        background-color: #739855;
+    }
+
+    25% {
+        background-color: #866C5A;
+    }
+
+    50% {
+        background-color: rgb(156, 196, 218);
+    }
+
+    75% {
+        background-color: #D8853F;
+    }
+
+    100% {
+        background-color: #56432D;
+    }
+}
+
+#olho-grande .pupil {
+    width: 45px;
+    height: 45px;
+}
+
+#olho-grande.visible {
+    opacity: 1;
+}
+
+.eye.visible {
+    opacity: 1;
+}
+
+
+.eye {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.iris {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+}
+
+.pupil{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+}
+
+.mata-atlantica .iris{
+    background-color: #739855;
+}
+
+.amazonia .iris{
+    background-color: #866C5A;
+}
+
+.pantanal .iris{
+    background-color: rgb(156, 196, 218);
+}
+
+.caatinga .iris{
+    background-color: #D8853F;
+}
+
+.cerrado .iris{
+    background-color: #56432D;
+}
+
+.blink {
+    animation: blink-animation 0.5s forwards;
+}
+
+@keyframes blink-animation {
+    0% { height: 25px; }
+    50% { height: 0; }
+    100% { height: 25px; }
+}
